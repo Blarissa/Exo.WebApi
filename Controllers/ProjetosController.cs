@@ -11,7 +11,7 @@ namespace Exo.WebApi.Controllers
     public class ProjetosController : ControllerBase
     {
         private readonly ProjetoRepository _projetoRepository;
-        
+
         public ProjetosController(ProjetoRepository projetoRepository)
         {
             _projetoRepository = projetoRepository;
@@ -62,13 +62,15 @@ namespace Exo.WebApi.Controllers
         {
             var projetoBuscado = _projetoRepository.BuscarPorId(id);
 
-            try 
+            try
             {
                 _projetoRepository.Deletar(id);
                 return StatusCode(204);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 return BadRequest(e);
-            }            
+            }
         }
     }
 }

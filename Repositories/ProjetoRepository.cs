@@ -48,7 +48,7 @@ namespace Exo.WebApi.Repositories
         public void Deletar(int id)
         {
             var projetoBuscado = BuscarPorId(id);
-            
+
             _context.Projetos.Remove(projetoBuscado);
             _context.SaveChanges();
         }
